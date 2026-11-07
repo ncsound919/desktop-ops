@@ -5,7 +5,9 @@ from datetime import date
 from pathlib import Path
 
 COST_LOG = Path("state/costs.jsonl")
-BUDGET = 5.0  # USD per day, default; override via env
+import os
+
+BUDGET = float(os.environ.get("DESKTOP_OPS_DAILY_BUDGET", "5.0"))  # USD per day
 
 
 def record(provider, amount_usd, note=""):
@@ -17,7 +19,7 @@ def record(provider, amount_usd, note=""):
         "provider": provider,
         "amount": amount_usd,
         "note": note,
-        "ts": datetime.datetime.utcnow().isoformat() + "Z",
+        "ts": datetime.datetime.now(datetime.timezone.utc).isoformat(),
     }
     with COST_LOG.open("a") as f:
         f.write(json.dumps(entry) + "\n")

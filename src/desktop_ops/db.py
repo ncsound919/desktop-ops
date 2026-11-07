@@ -35,7 +35,7 @@ def write_receipt(label, data, prev_hash=None):
     h = hashlib.sha256(payload.encode()).hexdigest()
     import datetime
 
-    ts = datetime.datetime.utcnow().isoformat() + "Z"
+    ts = datetime.datetime.now(datetime.timezone.utc).isoformat()
     rid = h[:16]
     c.execute(
         "INSERT INTO receipt (id, label, data_json, prev_hash, hash, created_at) VALUES (?,?,?,?,?,?)",

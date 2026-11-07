@@ -39,17 +39,11 @@ def run_task(task, max_steps=5):
             except Exception:
                 action = None
 
-        if not action:
-            steps.append({"step": i + 1, "phase": "act", "note": "no parseable action; stopping"})
+        if not action or "." not in action:
+            steps.append({"step": i + 1, "phase": "act", "note": f"no parseable action: {action}"})
             break
 
-        adapter_name, _, act = (action.split(".", 1) + [None])[:2] if "." in action else (action, None)
-        # Normalize: expect "adapter.action"
-        if "." not in action:
-            steps.append({"step": i + 1, "phase": "act", "note": f"bad action format: {action}"})
-            break
         adapter_name, act = action.split(".", 1)
-
         mod = registry.get_adapter(adapter_name)
         if mod is None:
             steps.append({"step": i + 1, "phase": "act", "refused": f"unknown adapter {adapter_name}"})
