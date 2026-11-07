@@ -1,0 +1,18 @@
+# Playbook: faceless YouTube channel (Phase 3)
+id: faceless-youtube
+stage: acquire
+risk: R2
+approval: operator
+idempotency: "faceless:{niche}:{date}"
+slaMinutes: 1440
+kpi: { name: installs_attributed, target: 1 }
+enabled: false
+killSwitchEnv: FACELESS_YOUTUBE_ENABLED
+steps:
+  - niche_select: research.search (topic demand + competition)
+  - script: llm.chat (script with hooks)
+  - voice: kokoro.tts.synthesize
+  - video: ffmpeg.render (audio + slides)
+  - thumbnail: thumbnail.create (PIL text overlay)
+  - upload: refused (human approval required; YouTube ToS)
+  - measure: 7 days later record engagement

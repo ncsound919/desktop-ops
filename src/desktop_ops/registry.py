@@ -19,6 +19,13 @@ ADAPTERS = {
     "scaffold": "desktop_ops.adapters.scaffold",
     "audit": "desktop_ops.adapters.audit",
     "testrunner": "desktop_ops.adapters.testrunner",
+    "kokoro": "desktop_ops.adapters.kokoro",
+    "ffmpeg": "desktop_ops.adapters.ffmpeg",
+    "thumbnail": "desktop_ops.adapters.thumbnail",
+    "docling": "desktop_ops.adapters.docling",
+    "blog": "desktop_ops.adapters.blog",
+    "listmonk": "desktop_ops.adapters.listmonk",
+    "umami": "desktop_ops.adapters.umami",
 }
 
 
