@@ -16,6 +16,9 @@ ADAPTERS = {
     "browser": "desktop_ops.adapters.browser",
     "research": "desktop_ops.adapters.research",
     "memory": "desktop_ops.adapters.memory",
+    "scaffold": "desktop_ops.adapters.scaffold",
+    "audit": "desktop_ops.adapters.audit",
+    "testrunner": "desktop_ops.adapters.testrunner",
 }
 
 
