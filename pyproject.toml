@@ -1,0 +1,20 @@
+[project]
+name = "desktop-ops"
+version = "0.1.0"
+description = "Desktop execution plane for the overlay365 ecosystem. Compiles OSS tools; runs on an old (no-GPU) desktop."
+requires-python = ">=3.11"
+dependencies = [
+    "click>=8.0",
+    "rich>=13.0",
+    "pyyaml>=6.0",
+]
+
+[project.scripts]
+ops = "desktop_ops.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

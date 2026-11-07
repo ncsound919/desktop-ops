@@ -1,0 +1,18 @@
+# Port registry — single source of truth for the overlay365 ecosystem.
+# Source: ECOSYSTEM-STATE-2026-10-29.md section 5.
+# Desktop-ops `ops doctor` flags collisions against this file.
+
+ports:
+  phone:
+    8080: llama.cpp + 4 LoRA GGUFs (S25)
+    8788: shared/llm-mesh gateway (phone)
+    8765: agent-support memory (HTTP, was unauthenticated)
+    8766: agent-support ecosystem context (MCP)
+    8770: Concordance Kokoro TTS
+    8799: vault-a (loopback)
+    8000: AetherDesk fleet server
+  edge:
+    443: mobile-gateway, sieve-ingest, ecosystem-control, concordance-web (Cloudflare Workers)
+  desktop:
+    # desktop-ops itself does not bind a port by default (CLI).
+    # Add entries here when a desktop service binds a port.
