@@ -17,6 +17,8 @@ TOOLS = [
     ("aider", "aider", "--version", "coding agent"),
     ("playwright", "playwright", "--version", "browser automation"),
     ("semgrep", "semgrep", "--version", "audit"),
+    ("crawl4ai", "python", "-c import crawl4ai", "research (optional)"),
+    ("mem0", "python", "-c import mem0", "memory (optional)"),
     ("qdrant", "qdrant", "--version", "vector store (optional)"),
     ("listmonk", "listmonk", "--version", "newsletter (optional)"),
     ("ollama", "ollama", "--version", "NOT used on desktop (no GPU)"),

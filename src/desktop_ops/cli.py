@@ -13,13 +13,14 @@ def cli():
 
 
 # Register subcommands
-from desktop_ops.commands import doctor, status, git_bootstrap, licenses, adapters  # noqa: E402
+from desktop_ops.commands import doctor, status, git_bootstrap, licenses, adapters, agent_group  # noqa: E402
 
 cli.add_command(doctor.doctor)
 cli.add_command(status.status)
 cli.add_command(git_bootstrap.git_bootstrap)
 cli.add_command(licenses.licenses)
 cli.add_command(adapters.adapters)
+cli.add_command(agent_group.agent)
 
 
 def main():

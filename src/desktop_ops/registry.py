@@ -12,6 +12,10 @@ from pathlib import Path
 
 ADAPTERS = {
     "aider": "desktop_ops.adapters.aider",
+    "llm": "desktop_ops.adapters.llm",
+    "browser": "desktop_ops.adapters.browser",
+    "research": "desktop_ops.adapters.research",
+    "memory": "desktop_ops.adapters.memory",
 }
 
 
