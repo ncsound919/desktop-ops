@@ -83,6 +83,7 @@ class Handler(BaseHTTPRequestHandler):
 
 def serve(port=None):
     port = port or PORT
+    HTTPServer.allow_reuse_address = True
     httpd = HTTPServer(("0.0.0.0", port), Handler)
     print(f"desktop-ops MCP server listening on :{port}")
     httpd.serve_forever()

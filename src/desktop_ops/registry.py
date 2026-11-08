@@ -26,6 +26,9 @@ ADAPTERS = {
     "blog": "desktop_ops.adapters.blog",
     "listmonk": "desktop_ops.adapters.listmonk",
     "umami": "desktop_ops.adapters.umami",
+    "agent_browser": "desktop_ops.adapters.agent_browser",
+    "ruff": "desktop_ops.adapters.ruff",
+    "sherlock": "desktop_ops.adapters.sherlock",
 }
 
 
