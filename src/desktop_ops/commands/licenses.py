@@ -16,4 +16,4 @@ def licenses():
         return
     # Fallback: pip list
     console.print("[dim]pip-licenses not installed; showing pip list instead.[/dim]")
-    subprocess.run(["pip", "list"], check=False)
+    subprocess.run(["python", "-m", "pip", "list"], check=False)
